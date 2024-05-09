@@ -1,0 +1,118 @@
+SQLyog Community v11.52 (32 bit)
+MySQL - 5.5.30 : Database - dice
+***********************
+*/
+/*!40101 SET NAMES utf8 */;
+
+/!40101 SET SQL_MODE=''/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /!32312 IF NOT EXISTS/dice /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE dice;
+
+/*Table structure for table blockhash */
+
+DROP TABLE IF EXISTS blockhash;
+
+CREATE TABLE blockhash (
+  imgid varchar(500) DEFAULT NULL,
+  imgnm varchar(500) DEFAULT NULL,
+  b1 varchar(500) DEFAULT NULL,
+  b2 varchar(500) DEFAULT NULL,
+  b3 varchar(500) DEFAULT NULL,
+  b4 varchar(500) DEFAULT NULL,
+  b5 varchar(500) DEFAULT NULL,
+  b6 varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Table structure for table checks */
+
+DROP TABLE IF EXISTS checks;
+
+CREATE TABLE checks (
+  res longblob
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Table structure for table cloud */
+
+DROP TABLE IF EXISTS cloud;
+
+CREATE TABLE cloud (
+  imgid varchar(500) DEFAULT NULL,
+  imgnm varchar(500) DEFAULT NULL,
+  b1 longblob,
+  b2 longblob,
+  b3 longblob,
+  b4 longblob,
+  b5 longblob,
+  b6 longblob
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Table structure for table files */
+
+DROP TABLE IF EXISTS files;
+
+CREATE TABLE files (
+  imgid int(100) DEFAULT NULL,
+  imgnm varchar(1000) DEFAULT NULL,
+  img longblob,
+  unm varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Table structure for table refhash */
+
+DROP TABLE IF EXISTS refhash;
+
+CREATE TABLE refhash (
+  imgid varchar(500) DEFAULT NULL,
+  blockhash varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Table structure for table register */
+
+DROP TABLE IF EXISTS register;
+
+CREATE TABLE register (
+  name varchar(100) DEFAULT NULL,
+  unm varchar(100) DEFAULT NULL,
+  pwd varchar(100) DEFAULT NULL,
+  email varchar(100) DEFAULT NULL,
+  mno varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Table structure for table tags */
+
+DROP TABLE IF EXISTS tags;
+
+CREATE TABLE tags (
+  imgid varchar(100) DEFAULT NULL,
+  imgnm varchar(500) DEFAULT NULL,
+  b1 varchar(4000) DEFAULT NULL,
+  b2 varchar(4000) DEFAULT NULL,
+  b3 varchar(4000) DEFAULT NULL,
+  b4 varchar(4000) DEFAULT NULL,
+  b5 varchar(4000) DEFAULT NULL,
+  b6 varchar(4000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Table structure for table temp */
+
+DROP TABLE IF EXISTS temp;
+
+CREATE TABLE temp (
+  bh1 longblob,
+  bh2 longblob,
+  bh3 longblob,
+  bh4 longblob,
+  bh5 longblob,
+  bh6 longblob
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
